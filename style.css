@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* scroll-behavior smooth garante que as âncoras rolam suavemente no mobile e desktop */
+html {
+    scroll-behavior: smooth;
+}
