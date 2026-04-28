@@ -67,7 +67,7 @@
                         <li class="flex items-center gap-2">Somente na unidade que for inscrito</li>
 
                     </ul>
-                    <button class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar Bronze</button>
+                    <button onclick="openModal('Bronze')" class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar Bronze</button>
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-2xl border-2 border-orange-500 relative transform md:-translate-y-4 shadow-2xl shadow-orange-500/10 flex flex-col">
@@ -81,7 +81,7 @@
                         <li class="flex items-center gap-2">BioImpedância - Avaliação física</li>
                         <li class="flex items-center gap-2">Nutricionista - Avaliação Nutricional</li>
                     </ul>
-                    <button class="w-full py-3 rounded-lg bg-orange-500 text-slate-900 font-bold hover:bg-orange-600 transition shadow-lg">Assinar Diamante</button>
+                    <button onclick="openModal('Diamante')" class="w-full py-3 rounded-lg bg-orange-500 text-slate-900 font-bold hover:bg-orange-600 transition shadow-lg">Assinar Diamante</button>
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition group flex flex-col">
@@ -95,7 +95,7 @@
                         <li class="flex items-center gap-2">Acesso todas as aulas</li>
                         
                     </ul>
-                    <button class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar Ouro</button>
+                    <button onclick="openModal('Ouro')" class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar Ouro</button>
                 </div>
 
             </div>
@@ -168,11 +168,44 @@
 
     </div>
 </section>
+<div id="modalMatricula" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+    
+    <div id="modalContent" class="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-all duration-300 relative shadow-2xl shadow-blue-500/10">
+        
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <h2 class="text-3xl font-black text-white mb-2 uppercase">Junte-se à Elite</h2>
+        <p class="text-gray-400 mb-6 text-sm">Preencha seus dados para garantir o plano <span id="nomePlanoModal" class="text-blue-500 font-bold uppercase"></span>.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Dados prontos para ir para o Spring Boot!'); closeModal();" class="space-y-4">
+            <div>
+                <input type="text" placeholder="Seu Nome Completo" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <div>
+                <input type="email" placeholder="Seu Email" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <div>
+                <input type="tel" placeholder="Telefone / WhatsApp" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <button type="submit" class="w-full py-3 rounded-lg bg-blue-500 text-slate-950 font-bold text-lg hover:bg-blue-600 transition shadow-lg mt-2">
+                Confirmar Matrícula
+            </button>
+        </form>
+    </div>
+</div>
 
     <footer class="bg-gray-950 border-t border-gray-900 py-8 text-center text-gray-500">
         <p class="font-bold text-gray-400 mb-2">PanaGYM &copy; 2026. Seu treino, sua força.</p>
         <p class="text-sm">Desenvolvido com foco em performance.</p>
     </footer>
+<script src="script.js"></script>
 
 </body>
 </html>
