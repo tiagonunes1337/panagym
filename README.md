@@ -8,7 +8,7 @@ Este projeto está sendo desenvolvido em etapas e tem como objetivo demonstrar h
 
 ## 🚀 Status do Projeto
 
-🚧 **Fase 1: Front-end (Concluída / Em Andamento)** 🚧
+🚧 **Fase 1: Front-end (Versão Beta / Em Desenvolvimento)** 🚧
 A etapa atual consiste na construção de uma Landing Page focada em conversão, apresentando planos, horários e informações da academia.
 
 ⏳ **Fase 2: Back-end (Em breve)** ⏳
