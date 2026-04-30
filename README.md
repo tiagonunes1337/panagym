@@ -1,68 +1,85 @@
 # 🏋️‍♂️ PanaGYM - Sistema de Gerenciamento de Academia
 
-Bem-vindo ao repositório do **PanaGYM**, uma plataforma moderna e responsiva focada no gerenciamento e na apresentação institucional de uma academia de alto padrão. 
-
-Este projeto está sendo desenvolvido em etapas e tem como objetivo demonstrar habilidades em estruturação de interfaces web modernas e, no futuro, a integração com um sistema robusto de back-end.
+Bem-vindo ao repositório do **PanaGYM**, uma plataforma moderna e responsiva para gerenciamento de matrículas de academia, desenvolvida como projeto de portfólio para praticar desenvolvimento Fullstack com Java e Spring Boot.
 
 ---
 
 ## 🚀 Status do Projeto
 
-🚧 **Fase 1: Front-end (Concluída / Em Andamento)** 🚧
-A etapa atual consiste na construção de uma Landing Page focada em conversão, apresentando planos, horários e informações da academia.
+✅ **Fase 1: Front-end (Concluída)**
+Landing Page focada em conversão, apresentando planos, unidades e horários da academia.
 
-⏳ **Fase 2: Back-end (Em breve)** ⏳
-Integração com API REST para gerenciamento de matrículas e usuários.
+✅ **Fase 2: Back-end (Concluída)**
+Integração com Spring Boot para gerenciamento de matrículas, persistência em banco de dados MySQL e geração de comprovante em PDF.
 
 ---
 
-## 💻 Tecnologias Utilizadas (Fase Atual)
+## 💻 Tecnologias Utilizadas
 
 * **HTML5:** Estruturação semântica.
-* **CSS3 & Tailwind CSS (v4):** Estilização moderna, ágil e responsiva usando a abordagem *utility-first* via CDN.
-* **Glassmorphism:** Efeitos visuais modernos (`backdrop-blur`) para destacar seções premium.
+* **CSS3 & Tailwind CSS (v4):** Estilização moderna e responsiva via CDN.
+* **JavaScript:** Controle do modal de matrícula e injeção dinâmica do plano selecionado no formulário.
+* **Java 17+**
+* **Spring Boot:** Framework principal do back-end.
+* **Spring Data JPA + Hibernate:** Mapeamento objeto-relacional e persistência.
+* **MySQL:** Banco de dados relacional.
+* **OpenPDF (LowaGie):** Geração de comprovante de matrícula em PDF no servidor.
+* **Lombok:** Redução de boilerplate nas entidades Java.
 
 ---
 
-## ⚙️ Arquitetura e Decisões Técnicas
+## ⚙️ Funcionalidades
 
-Para a concepção visual, o site abandonou frameworks tradicionais de componentes prontos (como Bootstrap) em favor do **Tailwind CSS**. Isso permitiu criar uma identidade visual única (combinando tons escuros de *slate* com destaques em azul/laranja), garantindo alta customização sem inflar o código CSS com classes desnecessárias ou sobrescritas forçadas.
-
-As principais seções do HTML incluem:
-* **Header Premium:** Navegação responsiva com efeito `sticky` e fundo translúcido.
-* **Hero Section:** Apresentação de alto impacto para prender a atenção do usuário.
-* **Grid de Planos:** Cards interativos utilizando `Flexbox` e `Grid` para melhor disposição em telas móveis e desktop, com destaque para o plano principal ("Black").
-* **Quadro de Horários:** Design em formato de lista (card) com alinhamento dinâmico (`justify-between`).
-
----
-
-## 🔮 Próximos Passos (Back-end)
-
-A evolução natural do PanaGYM transformará esta Landing Page em uma aplicação Fullstack. O desenvolvimento do servidor será realizado com:
-
-* **Linguagem:** Java
-* **Framework:** Spring Boot
-* **Banco de Dados:** (A definir: MySQL / PostgreSQL)
-* **Funcionalidades Previstas:**
-    * API RESTful para cadastro de novos alunos.
-    * Autenticação e Login.
-    * Painel administrativo para controle de planos e horários.
+* Apresentação institucional da academia com seções de planos, unidades e horários.
+* Modal de matrícula com seleção de plano (Bronze, Ouro, Diamante).
+* Cadastro de aluno persistido no banco de dados via Spring Data JPA.
+* Geração e download automático de comprovante em PDF ao finalizar a matrícula.
+* Listagem de alunos matriculados (`/matriculas/lista`).
+* Remoção de matrícula por ID.
 
 ---
 
-## 📥 Como executar o projeto localmente (Fase Front-end)
+## 🗄️ Banco de Dados
 
-Como a aplicação atualmente roda apenas com HTML estático e o Tailwind via script, não há necessidade de configurar ambientes complexos ou rodar servidores de build como o Node.js.
+O projeto utiliza **MySQL**. Para configurar, execute o script disponível em `BancodeDados.sql` na raiz do repositório:
 
-1.  Clone este repositório:
-    ```bash
-    git clone [https://github.com/tiagonunes1337/panagym.git](https://github.com/tiagonunes1337/panagym.git)
-    ```
-2.  Acesse a pasta do projeto.
-3.  Basta dar um duplo clique no arquivo `index.html` para abri-lo no seu navegador padrão.
+```sql
+CREATE DATABASE panagym;
+USE panagym;
+
+CREATE TABLE matricula (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(70) NOT NULL,
+    email VARCHAR(100),
+    telefone VARCHAR(20),
+    cpf VARCHAR(14),
+    cartao VARCHAR(16) NOT NULL,
+    plano VARCHAR(20) NOT NULL
+);
+```
+
+Configure suas credenciais em `src/main/resources/application.properties`.
+
+---
+
+## 📥 Como executar localmente
+
+**Pré-requisitos:** Java 17+, Maven, MySQL rodando localmente.
+
+1. Clone o repositório:
+```bash
+   git clone https://github.com/tiagonunes1337/panagym.git
+```
+2. Execute o script `BancodeDados.sql` no seu MySQL.
+3. Configure o `application.properties` com seu usuário e senha do banco.
+4. Na pasta `spring-petclinic`, rode:
+```bash
+   ./mvnw spring-boot:run
+```
+5. Acesse `http://localhost:8080` no navegador.
 
 ---
 
 <p align="center">
-  Desenvolvido com dedicação e foco em performance web. 💻
+  Desenvolvido com dedicação para praticar Java e Spring Boot. 💻
 </p>
