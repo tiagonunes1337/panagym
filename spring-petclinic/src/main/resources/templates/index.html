@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanaGYM - Brasília - Distrito Federal</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-950 font-sans text-white antialiased">
+
+    <header class="bg-gray-950/80 backdrop-blur-md border-b-2 border-blue-500 sticky top-0 z-50 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="img/panagymlogo.png" alt="Logo Panagym" class="h-10 w-auto">
+                <span class="text-2xl font-black text-white tracking-tighter">
+                    PANA<span class="text-blue-500">GYM</span>
+                </span>
+            </div>
+            <nav class="hidden md:flex h-20 items-center gap-15 text-gray-300">
+                <a href="#inicio" class="hover:text-blue-400 transition font-bold text-xl">Início</a>
+                <a href="#planos" class="hover:text-blue-400 transition font-bold text-xl">Planos</a>
+                <a href="#unidades" class="hover:text-blue-400 transition font-bold text-xl">Unidades</a>
+                <a href="#horario" class="hover:text-blue-400 transition font-bold text-xl">Horário</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-center">
+            <img src="img/panagymbackground.jpg" alt="Academia PanaGYM"
+                class="absolute inset-0 w-full h-full object-cover opacity-50">
+            <div
+                class="relative z-10 max-w-4xl p-8 bg-gray-950/60 backdrop-blur-sm rounded-2xl border border-gray-800/50">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                    Transforme seu corpo, <br>
+                    <span class="text-blue-500">alcance seus objetivos!</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Na PanaGYM, oferecemos o melhor ambiente e os equipamentos mais modernos de Brasília para você
+                    evoluir nos seus treinos.
+                </p>
+                <a href="#planos"
+                    class="bg-blue-500 hover:bg-blue-600 text-gray-950 px-8 py-4 rounded-full font-bold text-lg transition inline-block">
+                    Matricule-se Agora
+                </a>
+            </div>
+        </section>
+
+        <section id="planos" class="py-24 bg-slate-900 px-6 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-black text-white mb-4">ESCOLHA SEU PLANO</h2>
+                <div class="h-1 w-24 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bronze -->
+                <div
+                    class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition group flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">PLANO BRONZE - ANUAL</h3>
+                    <div class="text-4xl font-black text-white mb-6">R$ 99<span
+                            class="text-lg text-gray-500 font-normal">/mês</span></div>
+                    <ul class="text-gray-400 space-y-4 mb-8 flex-grow">
+                        <li>Acesso à área de musculação</li>
+                        <li>Aulas coletivas</li>
+                        <li>Somente na unidade inscrita</li>
+                    </ul>
+                    <button onclick="openModal('BRONZE')"
+                        class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar
+                        Bronze</button>
+                </div>
+
+                <!-- Diamante -->
+                <div
+                    class="bg-slate-800 p-8 rounded-2xl border-2 border-orange-500 relative transform md:-translate-y-4 shadow-2xl shadow-orange-500/10 flex flex-col">
+                    <span
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-slate-900 px-4 py-1 rounded-full text-sm font-black tracking-wider">MAIS
+                        POPULAR</span>
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">PLANO DIAMANTE - ANUAL</h3>
+                    <div class="text-4xl font-black text-white mb-6">R$ 139<span
+                            class="text-lg text-gray-500 font-normal">/mês</span></div>
+                    <ul class="text-gray-200 space-y-4 mb-8 flex-grow">
+                        <li class="font-medium text-orange-400">Acesso LIVRE a todas unidades</li>
+                        <li>Cadeira de Massagem</li>
+                        <li>Levar dois amigos toda sexta</li>
+                        <li>BioImpedância</li>
+                        <li>Nutricionista</li>
+                    </ul>
+                    <button onclick="openModal('DIAMANTE')"
+                        class="w-full py-3 rounded-lg bg-orange-500 text-slate-900 font-bold hover:bg-orange-600 transition shadow-lg">Assinar
+                        Diamante</button>
+                </div>
+
+                <!-- Ouro -->
+                <div
+                    class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition group flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">PLANO OURO - ANUAL</h3>
+                    <div class="text-4xl font-black text-white mb-6">R$ 119<span
+                            class="text-lg text-gray-500 font-normal">/mês</span></div>
+                    <ul class="text-gray-400 space-y-4 mb-8 flex-grow">
+                        <li class="font-medium text-blue-400">Acesso LIVRE a todas unidades</li>
+                        <li>Sem taxa de matrícula</li>
+                        <li>Congelamento de 30 dias</li>
+                        <li>Acesso a todas as aulas</li>
+                    </ul>
+                    <button onclick="openModal('OURO')"
+                        class="w-full py-3 rounded-lg border border-blue-500 text-blue-500 font-bold group-hover:bg-blue-500 group-hover:text-slate-900 transition">Assinar
+                        Ouro</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Matrícula -->
+    <div id="modalMatricula"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+        <div id="modalContent"
+            class="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-all duration-300 relative shadow-2xl shadow-blue-500/10">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 class="text-3xl font-black text-white mb-2 uppercase">Junte-se à Elite</h2>
+            <p class="text-gray-400 mb-6 text-sm">Preencha seus dados para garantir o plano <span id="nomePlanoModal"
+                    class="text-blue-500 font-bold uppercase"></span>.</p>
+
+            <form action="/matriculas/finalizar-matricula" method="POST" class="space-y-4"
+                onsubmit="return validarPlano()">
+                <input type="text" name="nome" placeholder="Seu Nome Completo" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none transition">
+                <input type="email" name="email" placeholder="Seu Email" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none transition">
+                <input type="tel" name="telefone" placeholder="Telefone / WhatsApp" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none transition">
+                <input type="text" name="cpf" placeholder="000.000.000-00" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none transition">
+                <input type="text" name="cartao" placeholder="Número do Cartão (Somente Credito)" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none transition">
+
+                <!-- Campo escondido que o JS vai preencher -->
+                <input type="hidden" name="plano" id="planoSelecionado" value="">
+
+                <button type="submit"
+                    class="w-full py-3 rounded-lg bg-blue-500 text-slate-950 font-bold text-lg hover:bg-blue-600 transition shadow-lg mt-2">
+                    Confirmar Matrícula
+                </button>
+            </form>
+        </div>
+    </div>
+
+     <section id="unidades" class="py-24 bg-slate-900 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-black text-white mb-4">NOSSAS UNIDADES</h2>
+            <div class="h-1 w-24 bg-blue-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition">
+                <img src="img/unidadeasasul.png" alt="PanaGYM Asa Sul" class="w-full h-40 object-cover rounded mb-4">
+                <h3 class="text-xl font-bold text-gray-400 mb-2">PanaGYM Asa Sul</h3>
+                <p class="text-gray-300 mb-4">Eixo Sul, 1234 - Asa Sul, Brasília</p>
+                <p class="text-gray-400">Telefone: (61) 1234-5678</p>
+                <p class="text-gray-400">Email: contatoasasul@panagym.com</p>
+
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition">
+                <img src="img/unidadeceilandia.jpg" alt="PanaGYM Ceilândia" class="w-full h-40 object-cover rounded mb-4">
+                <h3 class="text-xl font-bold text-gray-400 mb-2">PanaGYM Ceilândia Sul</h3>
+                <p class="text-gray-300 mb-4">Via Oeste, 5678 - Ceilândia Sul, Brasília</p>
+                <p class="text-gray-400">Telefone: (61) 1234-5678</p>
+                <p class="text-gray-400">Email: contatoceilandia@panagym.com</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition">
+                <img src="img/unidadeareal.jpg" alt="PanaGYM Areal" class="w-full h-40 object-cover rounded mb-4">
+                <h3 class="text-xl font-bold text-gray-400 mb-2">PanaGYM Areal</h3>
+                <p class="text-gray-300 mb-4">Avenida Águas Claras, 9012 - Areal, Brasília</p>
+                <p class="text-gray-400">Telefone: (61) 1234-5678</p>
+                <p class="text-gray-400">Email: contatoareal@panagym.com</p>
+            </div>
+        </div>
+            </section>
+
+            <section id="horario" class="py-24 bg-slate-950 px-6">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-black text-white mb-4">HORÁRIO DE FUNCIONAMENTO</h2>
+        <div class="h-1 w-24 bg-blue-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-slate-800 p-8 md:p-12 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 shadow-2xl">
+        
+        <ul class="flex flex-col">
+            <li class="flex justify-between items-center py-5 border-b border-slate-700">
+                <span class="text-white font-bold text-xl flex items-center gap-3">
+                     Segunda a Sexta
+                </span>
+                <span class="text-blue-400 font-black text-xl">06:00 - 23:00</span>
+            </li>
+            
+            <li class="flex justify-between items-center py-5 border-b border-slate-700">
+                <span class="text-white font-bold text-xl flex items-center gap-3">
+                     Sábado
+                </span>
+                <span class="text-blue-400 font-black text-xl">08:00 - 18:00</span>
+            </li>
+            
+            <li class="flex justify-between items-center py-5 border-b border-slate-700">
+                <span class="text-white font-bold text-xl flex items-center gap-3">
+                     Domingo
+                </span>
+                <span class="text-blue-400 font-black text-xl">09:00 - 14:00</span>
+            </li>
+        </ul>
+
+    </div>
+</section>
+<div id="modalMatricula" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+    
+    <div id="modalContent" class="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-all duration-300 relative shadow-2xl shadow-blue-500/10">
+        
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <h2 class="text-3xl font-black text-white mb-2 uppercase">Junte-se à Elite</h2>
+        <p class="text-gray-400 mb-6 text-sm">Preencha seus dados para garantir o plano <span id="nomePlanoModal" class="text-blue-500 font-bold uppercase"></span>.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Dados prontos para ir para o Spring Boot!'); closeModal();" class="space-y-4">
+            <div>
+                <input type="text" placeholder="Seu Nome Completo" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <div>
+                <input type="email" placeholder="Seu Email" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <div>
+                <input type="tel" placeholder="Telefone / WhatsApp" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition">
+            </div>
+            <button type="submit" class="w-full py-3 rounded-lg bg-blue-500 text-slate-950 font-bold text-lg hover:bg-blue-600 transition shadow-lg mt-2">
+                Confirmar Matrícula
+            </button>
+        </form>
+    </div>
+</div>
+
+    <footer class="bg-gray-950 border-t border-gray-900 py-8 text-center text-gray-500">
+        <p class="font-bold text-gray-400 mb-2">PanaGYM &copy; 2026. Seu treino, sua força.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
