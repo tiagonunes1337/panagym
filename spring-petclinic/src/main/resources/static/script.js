@@ -49,3 +49,35 @@ function validarPlano() {
     }
     return true;
 }
+// ── MÁSCARAS ──────────────────────────────────────────────────────────────
+
+document.querySelector('input[name="cpf"]').addEventListener('input', function (e) {
+    let v = e.target.value.replace(/\D/g, '');
+    v = v.substring(0, 11);
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    e.target.value = v;
+});
+
+document.querySelector('input[name="telefone"]').addEventListener('input', function (e) {
+    let v = e.target.value.replace(/\D/g, '');
+    v = v.substring(0, 11);
+    if (v.length <= 10) {
+        v = v.replace(/(\d{2})(\d)/, '($1) $2');
+        v = v.replace(/(\d{4})(\d)/, '$1-$2');
+    } else {
+        v = v.replace(/(\d{2})(\d)/, '($1) $2');
+        v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    }
+    e.target.value = v;
+});
+
+document.querySelector('input[name="cartao"]').addEventListener('input', function (e) {
+    let v = e.target.value.replace(/\D/g, '');
+    v = v.substring(0, 16);
+    v = v.replace(/(\d{4})(\d)/, '$1 $2');
+    v = v.replace(/(\d{4})(\d)/, '$1 $2');
+    v = v.replace(/(\d{4})(\d)/, '$1 $2');
+    e.target.value = v;
+});
